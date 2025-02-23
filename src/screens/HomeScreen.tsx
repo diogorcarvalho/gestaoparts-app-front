@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import {
-    View, Text, StyleSheet, TextInput, Button, ActivityIndicator, Alert
+    View, Text, StyleSheet, TextInput, Button, ActivityIndicator, Alert, Image
 } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
 import { StackScreenProps } from '@react-navigation/stack';
@@ -71,6 +71,10 @@ const HomeScreen: React.FC<Props> = ({ navigation }) => {
 
     return (
         <View style={styles.container}>
+            <Image
+                source={require('../../assets/logo.png')}
+                style={styles.logo}
+            />
             <Text style={styles.title}>Cadastrar Novo Custo</Text>
 
             {loading ? (
@@ -121,6 +125,12 @@ const styles = StyleSheet.create({
         flex: 1,
         padding: 20,
         backgroundColor: '#f5f5f5',
+    },
+    logo: {
+        width: 100,
+        height: 100,
+        alignSelf: 'center',
+        marginBottom: 20,
     },
     title: {
         fontSize: 22,

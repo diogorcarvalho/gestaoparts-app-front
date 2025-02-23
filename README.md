@@ -21,3 +21,31 @@ Para que o **Gerenciamento de Despesas Pessoais** funcione corretamente em seu a
 
    ```bash
    git clone https://github.com/diogorcarvalho/gestaoparts-app-front.git
+
+2. **Instalar dependências**
+   ```bash
+   npm install
+
+3. **Rodar o projeto**
+   ```bash
+   npx expo start
+
+## Sugestão para a Conectividade do Aplicativo e API
+
+Como  o projeto do aplicativo depende de sua API e provavelmente você irá roldar localmente, uma boa opção é utilizar o Ngrok (https://ngrok.com/) para realizar a integração entre a API (https://github.com/diogorcarvalho/gestaoparts-backend.git) e o aplicativo.
+
+## Configuração da BASE URL
+
+Na arquivo ‘src/services/api.ts’ atribua a url no atributo “baseURL”, ele se encontra na linha 4
+   ```bash
+   import axios, { AxiosResponse } from 'axios';
+
+   const api = axios.create({
+   baseURL: 'https://localhost:3000/',  // 👈 aqui
+   });
+
+   export interface Category {
+   id: number;
+   name: string;
+   }
+
